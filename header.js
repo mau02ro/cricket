@@ -35,6 +35,7 @@ window.addEventListener("resize", () => {
     }
   })
 
+  hd__menu.classList.remove(OPEN_MENU);
   hd__menu.style.width = "auto";
 
   document.getElementsByTagName("body")[0].style.overflow = "auto";
