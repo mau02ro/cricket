@@ -146,6 +146,18 @@ function handleClick_openMenu(){
       hd__menu.style.width = "0px"
          
       hd__menu.addEventListener("transitionend", () => {
+
+        Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
+          element.classList.remove(OPEN_SUBMENU);
+          element.classList.remove(HD_MENU_LINK_SELECT);
+
+          let subMenu = $(element)[0].nextElementSibling;
+
+          if(subMenu){
+            subMenu.classList.remove(OPEN_SUBMENU);
+          }
+        })
+        
         hd__menu.classList.remove(OPEN_MENU)
         document.getElementsByTagName("body")[0].style.overflow = "auto";
         document.getElementsByTagName("body")[0].style.position = "initial";
@@ -156,3 +168,5 @@ function handleClick_openMenu(){
     }
   }
 }
+
+
