@@ -67,7 +67,7 @@ function handleHover__openSubmenu(elementHover, keyHover) {
 	}
 }
 //------------------------------
-//Event of Open SubMenu Movile
+//Event of Open SubMenu Mobile
 //-----------------------------
 function handleClick_openSubMenu(elementClick, event){
   if(!validationWidth()){
@@ -116,13 +116,16 @@ function handleClick_openSubMenu(elementClick, event){
 }
 
 //------------------------------
-//Event of Open Menu Movile
+//Event of Open Menu Mobile
 //-----------------------------
 
 function handleClick_openMenu(){
 	if(!validationWidth()){    
     if(!hd__menu.classList.contains(OPEN_MENU)) {
       document.getElementsByTagName("html")[0].style.overflow = "hidden";
+      document.getElementsByTagName("html")[0].style.position = "fixed";
+      
+
 
       hd__main.classList.add("mascara");
       hd__menu.classList.add(OPEN_MENU);
@@ -147,6 +150,8 @@ function handleClick_openMenu(){
       hd__main.classList.remove("mascara");
 
       document.getElementsByTagName("html")[0].style.overflow = "auto";
+      document.getElementsByTagName("html")[0].style.position = "initial";
+
     }
   }
 }
