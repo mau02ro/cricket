@@ -37,8 +37,8 @@ window.addEventListener("resize", () => {
 
   hd__menu.style.width = "auto";
 
-  document.getElementsByTagName("body")[0].style.overflow = "hidden";
-  document.getElementsByTagName("body")[0].style.position = "fixed";
+  document.getElementsByTagName("body")[0].style.overflow = "auto";
+  document.getElementsByTagName("body")[0].style.position = "initial";
 })
 
 //-----------------
@@ -157,14 +157,12 @@ function handleClick_openMenu(){
             subMenu.classList.remove(OPEN_SUBMENU);
           }
         })
-        
+
         hd__menu.classList.remove(OPEN_MENU)
         document.getElementsByTagName("body")[0].style.overflow = "auto";
         document.getElementsByTagName("body")[0].style.position = "initial";
         hd__main.classList.remove("mascara");
       }, {once: true});
-
-
     }
   }
 }
