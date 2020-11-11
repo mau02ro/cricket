@@ -124,6 +124,8 @@ function handleClick_openMenu(){
     if(!hd__menu.classList.contains(OPEN_MENU)) {
       document.getElementsByTagName("html")[0].style.overflow = "hidden";
       document.getElementsByTagName("html")[0].style.position = "fixed";
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+      document.getElementsByTagName("body")[0].style.position = "fixed";
       
 
 
@@ -147,6 +149,8 @@ function handleClick_openMenu(){
         hd__menu.classList.remove(OPEN_MENU)
         document.getElementsByTagName("html")[0].style.overflow = "auto";
         document.getElementsByTagName("html")[0].style.position = "initial";
+        document.getElementsByTagName("body")[0].style.overflow = "auto";
+        document.getElementsByTagName("body")[0].style.position = "initial";
         hd__main.classList.remove("mascara");
       }, {once: true});
 
