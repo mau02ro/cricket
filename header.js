@@ -1,4 +1,4 @@
-var hd__menuLinks, hd__btnMenu, hd__menu;
+var hd__menuLinks, hd__btnMenu, hd__menu, hd__main;
 const OPEN_SUBMENU = 	"openSubMenu";
 const OPEN_MENU = 	"openMenu";
 const HD_MENU_LINK_SELECT = "hd__menu-link-select";
@@ -12,7 +12,7 @@ window.addEventListener("load", (event) => {
 	hd__menuLinks = document.getElementsByClassName("hd__menu-link");
 	hd__btnMenu = document.getElementById("hd__btnMenu");
 	hd__menu = document.getElementById("hd__menu");
-
+  hd__main = document.getElementById("hd__main");
 	
 	hd__btnMenu.addEventListener("click", () => handleClick_openMenu());
 
@@ -20,6 +20,24 @@ window.addEventListener("load", (event) => {
   	element.addEventListener("mouseover", () => handleHover__openSubmenu(element, key));
   	element.addEventListener("click", (event) => handleClick_openSubMenu(element, event));
   })
+})
+
+window.addEventListener("resize", () => {
+  Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
+    element.classList.remove(OPEN_SUBMENU);
+    element.classList.remove(HD_MENU_LINK_SELECT);
+
+    let subMenu = $(element)[0].nextElementSibling;
+
+    if(subMenu){
+      subMenu.classList.remove(OPEN_SUBMENU);
+      subMenu.style.height = "45px";
+    }
+  })
+
+  hd__menu.style.width = "auto";
+
+  document.getElementsByTagName("html")[0].style.overflow = "auto";
 })
 
 //-----------------
@@ -106,6 +124,7 @@ function handleClick_openMenu(){
     if(!hd__menu.classList.contains(OPEN_MENU)) {
       document.getElementsByTagName("html")[0].style.overflow = "hidden";
 
+      hd__main.classList.add("mascara");
       hd__menu.classList.add(OPEN_MENU);
 
       hd__menu.style.width = "auto";
@@ -124,6 +143,8 @@ function handleClick_openMenu(){
       hd__menu.addEventListener("transitionend", () => {
         hd__menu.classList.remove(OPEN_MENU)
       }, {once: true});
+
+      hd__main.classList.remove("mascara");
 
       document.getElementsByTagName("html")[0].style.overflow = "auto";
     }

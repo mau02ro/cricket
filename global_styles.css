@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+@font-face { 
+  font-family: "Simply Cricket Book"; 
+  src: url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Book.woff2") format("woff2"), 
+    url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Book.woff") format("woff"), 
+    url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Book.svg") format("svg"), 
+    url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Book.ttf") format("truetype"); 
+}
+@font-face { 
+  font-family: "Simply Cricket Demi"; 
+  src: url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Demibold.woff2") format("woff2"), 
+    url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Demibold.woff") format("woff"), 
+    url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Demibold.svg") format("svg"), 
+    url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Demibold.ttf") format("truetype"); 
+}
+
 :root{
 	--background-primary: #fff;
 	--background-secondary: #404041; 
@@ -21,7 +36,6 @@ body{
 html {
 	box-sizing: border-box;
 	font-size: 10px;
-  font-family:sans-serif;
 }
 *, *:before, *:after {
 	box-sizing: inherit;
