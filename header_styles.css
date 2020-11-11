@@ -310,6 +310,7 @@
 	/*-----------*/
 	.hd__message .hd__text{
 		padding: 15px 0;
+		font-size: 1rem;
 	}
 	/*-----------*/
 	/*Header Categories*/
@@ -335,7 +336,7 @@
 		margin-right: 0;
 		transform: scale(.8);
 	}
-	.hd__text{
+	.hd__categories-item .hd__text{
 		font-size: 1.3rem !important;
 	}
 	.hd__categories .hd__wrapper{
