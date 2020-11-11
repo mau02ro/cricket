@@ -145,12 +145,11 @@ function handleClick_openMenu(){
          
       hd__menu.addEventListener("transitionend", () => {
         hd__menu.classList.remove(OPEN_MENU)
+        document.getElementsByTagName("html")[0].style.overflow = "auto";
+        document.getElementsByTagName("html")[0].style.position = "initial";
+        hd__main.classList.remove("mascara");
       }, {once: true});
 
-      hd__main.classList.remove("mascara");
-
-      document.getElementsByTagName("html")[0].style.overflow = "auto";
-      document.getElementsByTagName("html")[0].style.position = "initial";
 
     }
   }
