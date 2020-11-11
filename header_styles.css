@@ -311,6 +311,7 @@
 	.hd__message .hd__text{
 		padding: 15px 0;
 		font-size: 1rem;
+		color: yellow;
 	}
 	/*-----------*/
 	/*Header Categories*/
