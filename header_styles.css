@@ -230,7 +230,7 @@
 	.openMenu{
 		display: flex !important;
 	}
-	.mascara:before{
+	.mask:before{
 		content: '';
 		position: absolute;
 		z-index: 1000;

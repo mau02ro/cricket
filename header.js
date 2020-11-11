@@ -35,9 +35,9 @@ window.addEventListener("resize", () => {
     }
   })
 
-  hd__menu.classList.remove(OPEN_MENU);
   hd__menu.style.width = "auto";
   hd__menu.classList.remove(OPEN_MENU);
+  hd__main.classList.remove("mask");
 
   document.getElementsByTagName("body")[0].style.overflow = "auto";
   document.getElementsByTagName("body")[0].style.position = "initial";
@@ -131,7 +131,7 @@ function handleClick_openMenu(){
       
 
 
-      hd__main.classList.add("mascara");
+      hd__main.classList.add("mask");
       hd__menu.classList.add(OPEN_MENU);
 
       hd__menu.style.width = "auto";
@@ -163,7 +163,7 @@ function handleClick_openMenu(){
         hd__menu.classList.remove(OPEN_MENU)
         document.getElementsByTagName("body")[0].style.overflow = "auto";
         document.getElementsByTagName("body")[0].style.position = "initial";
-        hd__main.classList.remove("mascara");
+        hd__main.classList.remove("mask");
       }, {once: true});
     }
   }
