@@ -23,11 +23,7 @@ window.addEventListener("load", (event) => {
   	element.addEventListener("mouseover", () => handleHover__openSubmenu(element, key));
   	element.addEventListener("click", (event) => handleClick_openSubMenu(element, event));
 
-    let icon = $(element)[0].firstElementChild;
-
-    if(icon){
-      changeClassIcons(icon);
-    }
+    changeClassIcons($(element));
   })
 })
 
@@ -43,7 +39,7 @@ window.addEventListener("resize", () => {
       subMenu.classList.remove(OPEN_SUBMENU);
       subMenu.style.height = "45px";
 
-      changeClassIcons(icon)
+      changeClassIcons($(element));
     }
   })
 
@@ -68,16 +64,25 @@ function handleMove_mouse(event) {
   let { clientY } = event;
 
   if(clientY > 185 && validationWidth()){
-    Array.prototype.forEach.call(hd__menuLinks, (element) => element.classList.remove(OPEN_SUBMENU))
+    Array.prototype.forEach.call(hd__menuLinks, (element) => {
+      element.classList.remove(OPEN_SUBMENU);
+      element.classList.remove("openSubmenu-cricket");
+    })
   }
 }
 
 function changeClassIcons(element){
-  if(validationWidth()){
-    element.className = "fa fa-angle-down"
-  }else {
-    element.className = "fas fa-chevron-circle-down"
-  }
+  let items = $(element)[0].children
+
+  Array.prototype.forEach.call(items, (value, key) => {
+    if(value.nodeName === "I"){
+      if(validationWidth()){
+        value.className = "fa fa-angle-down";
+      }else {
+        value.className = "fas fa-chevron-circle-down";
+      }
+    }
+  })
 }
 
 //------------------------------
@@ -86,7 +91,19 @@ function changeClassIcons(element){
 function handleHover__openSubmenu(elementHover, keyHover) {
 	if(validationWidth()){
 		Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
-	  	(keyHover === key) ? element.classList.add(OPEN_SUBMENU) : element.classList.remove(OPEN_SUBMENU);
+	  	if(keyHover === key){
+        element.classList.add(OPEN_SUBMENU);
+
+        let cricket = $(element)[0].firstElementChild
+
+        if(cricket.nodeName === "SPAN"){
+          element.classList.add("openSubmenu-cricket")
+        }
+      }else{
+        element.classList.remove(OPEN_SUBMENU)
+          element.classList.remove("openSubmenu-cricket")
+
+      }
 	  })
 	}
 }

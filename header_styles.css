@@ -108,6 +108,19 @@
 	margin-left: 5px;
 	font-size: 2rem;
 }
+
+.hd__menuCricket-link span{
+	display: none;
+}
+.hd__menuCricket-link{
+	   display: inline-block !important;
+    position: relative;
+    padding-left: 128px;
+    padding-bottom: 6px;
+    width: 100%;
+    height: 27px;
+	  background: url(https://www.cricketwireless.com/uiassets/bg_header-nav-cricket.png) no-repeat;
+}
 .hd__subMenu, #hd__moreLinks-main{
 	display: none;
 }
@@ -115,6 +128,9 @@
 	background: var(--background-primary);
 	list-style: none;
 	font-family: "Simply Cricket Book";
+}
+.openSubmenu-cricket{
+	background: url(https://www.cricketwireless.com/uiassets/bg_header-nav-cricket_hover.png) no-repeat !important;
 }
 .openSubMenu{
 	color: var(--details-blue) !important;
@@ -334,6 +350,16 @@
 		border-top: none;
 		border-bottom: 1px solid #dddddd;
 		transition: .6s;
+	}
+	.hd__menuCricket-link{
+		display: flex !important;
+    position: relative;
+    padding: 25px 25px 16px;
+    width: initial;
+    height: auto;
+	}
+	.hd__menuCricket-link span{
+		display: block;
 	}
 	/*animations*/
 	.openSubMenu{
