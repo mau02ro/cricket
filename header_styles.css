@@ -230,8 +230,7 @@
 		z-index: 10000;
 		top: 100%;
 		right: 0;
-		width: 100%;
-		max-width: 250px;
+		width: 250px;
 		background: var(--details-gray);
 		height: calc(100vh - 100%);
 		border-top: 1px solid #dddddd;
@@ -258,6 +257,7 @@
 	/*animations*/	
 	#hd__menu > li{
 		margin-left: 0;
+		width: 250px;
 	}
 	.hd__createAccount-main{
 		display: block !important;
@@ -296,7 +296,7 @@
 	}
 	.hd__menu-link i{
 		transform: rotateZ(-90deg);
-		transition: .1s;
+		transition: .6s;
 	}
 	.hd__menu-link-select{
 		color: var(--details-blue);

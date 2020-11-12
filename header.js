@@ -126,11 +126,11 @@ function handleClick_openSubMenu(elementClick, event){
         }, 0) 
 
       } else {
-        subMenu.style.height = "0px"
+        subMenu.style.height = "0px";
+        elementClick.classList.remove(HD_MENU_LINK_SELECT);
           
         subMenu.addEventListener("transitionend", () => {
           subMenu.classList.remove(OPEN_SUBMENU);
-          elementClick.classList.remove(HD_MENU_LINK_SELECT);
         }, {once: true})
       }
     }
@@ -155,7 +155,7 @@ function handleClick_openMenu(){
 
       hd__menu.style.width = "auto";
 
-      let width = `${hd__menu.clientWidth}%`;
+      let width = "250px";
 
       hd__menu.style.width = "0px";
 
