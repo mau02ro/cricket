@@ -93,6 +93,9 @@
 #hd__menu li{
 	margin-left: 25px;
 }
+.hd__createAccount-main{
+	display: none !important;
+}
 .hd__menu-link{
 	text-decoration: none;
 	color: var(--font-color-primary);
@@ -233,14 +236,14 @@
 		height: calc(100vh - 100%);
 		border-top: 1px solid #dddddd;
 		box-shadow: 0 12px 12px #000;
-		transition: .4s;
+		transition: .3s;
 		transition-property: width;
 		overflow-y: scroll !important;
 	}
 	/*animations*/
 	.openMenu{
 		display: flex !important;
-		transition: 1s !important;
+		transition: .9s !important;
 	}
 	.mask:before{
 		content: '';
@@ -255,6 +258,32 @@
 	/*animations*/	
 	#hd__menu > li{
 		margin-left: 0;
+	}
+	.hd__createAccount-main{
+		display: block !important;
+	}
+	.hd__createAccount-main span{
+		display: block;
+	}
+	.hd__top-createAccount{
+		background: #eeeeee;
+		flex-flow: row-reverse;
+		justify-content: space-between;
+		left: 0;
+		color: var(--details-blue); 
+		border: 2px solid var(--details-blue); 
+		border-radius: 5px;
+		font-size: 1.6rem;
+		white-space: nowrap;
+		line-height: 2.5rem;
+		padding: 16px 25px ;
+	}
+	.hd__top-createAccount i{
+		margin-right: 0;
+		font-size: 2.3rem;
+	}
+	.hd__top-createAccount:hover{
+		background: #eeeeee;
 	}
 	.hd__menu-link{
 		display: flex;

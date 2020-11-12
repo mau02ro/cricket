@@ -19,6 +19,12 @@ window.addEventListener("load", (event) => {
 	Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
   	element.addEventListener("mouseover", () => handleHover__openSubmenu(element, key));
   	element.addEventListener("click", (event) => handleClick_openSubMenu(element, event));
+
+    let icon = $(element)[0].firstElementChild;
+
+    if(icon){
+      changeClassIcons(icon);
+    }
   })
 })
 
@@ -28,10 +34,14 @@ window.addEventListener("resize", () => {
     element.classList.remove(HD_MENU_LINK_SELECT);
 
     let subMenu = $(element)[0].nextElementSibling;
+    let icon = $(element)[0].firstElementChild;
+    console.log($(element))
 
     if(subMenu){
       subMenu.classList.remove(OPEN_SUBMENU);
       subMenu.style.height = "45px";
+
+      changeClassIcons(icon)
     }
   })
 
@@ -56,6 +66,15 @@ function handleMove_mouse(event) {
 
   if(clientY > 185 && validationWidth()){
     Array.prototype.forEach.call(hd__menuLinks, (element) => element.classList.remove(OPEN_SUBMENU))
+  }
+}
+
+function changeClassIcons(element){
+  console.log(element)
+  if(validationWidth()){
+    element.className = "fa fa-angle-down"
+  }else {
+    element.className = "fas fa-chevron-circle-down"
   }
 }
 
