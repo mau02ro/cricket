@@ -45,6 +45,10 @@
 .hd__top-createAccount{
 	display: flex;
 	align-items: center;
+	line-height: 50px;
+	padding: 0 15px;
+	position: relative;
+	left: -15px;
 }
 .hd__top-createAccount i{
 	margin-right: 5px;
@@ -61,7 +65,7 @@
 	padding: 0 15px;
 	background: transparent;
 }
-.hd__moreLinks-link:hover{
+.hd__moreLinks-link:hover, .hd__top-createAccount:hover{
 	background: var(--details-gray);
 }
 /*-----------*/
@@ -155,6 +159,9 @@
 	color: var(--font-color-secondary);
 	line-height: .9rem;
 }
+.hd__message a:hover{
+	text-decoration: none;
+}
 /*-----------*/
 /*Header Categories*/
 /*-----------*/
@@ -176,6 +183,9 @@
 	color: var(--details-blue);
 	text-decoration: none;
 	position: relative;
+}
+.hd__categories-item:hover{
+	background: #eeeeee;
 }
 .hd__categories-item .hd__text{
 	font-size: 1.5rem;
@@ -223,12 +233,14 @@
 		height: calc(100vh - 100%);
 		border-top: 1px solid #dddddd;
 		box-shadow: 0 12px 12px #000;
-		transition: .2s;
+		transition: .4s;
+		transition-property: width;
 		overflow-y: scroll !important;
 	}
 	/*animations*/
 	.openMenu{
 		display: flex !important;
+		transition: 1s !important;
 	}
 	.mask:before{
 		content: '';
@@ -291,7 +303,7 @@
 		padding: 0 !important;
 		border-top: none;
 		border-bottom: 1px solid #dddddd;
-		transition: .2s;
+		transition: .6s;
 	}
 	/*animations*/
 	.openSubMenu{
