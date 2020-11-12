@@ -297,6 +297,7 @@
 	.hd__menu-link i{
 		transform: rotateZ(-90deg);
 		transition: .6s;
+		color: var(--details-blue);
 	}
 	.hd__menu-link-select{
 		color: var(--details-blue);
@@ -358,7 +359,7 @@
 	/*-----------*/
 	.hd__categories{
 		background: var(--background-primary);
-		box-shadow: 0 5px  5px #dddddd;
+		border-bottom: 2px solid #e4e4e4;
 	}
 	.hd__categories-item i{
 		display: none;

@@ -1,7 +1,10 @@
 var hd__menuLinks, hd__btnMenu, hd__menu, hd__main;
+
 const OPEN_SUBMENU = 	"openSubMenu";
 const OPEN_MENU = 	"openMenu";
 const HD_MENU_LINK_SELECT = "hd__menu-link-select";
+const HD_BTN_MENU_ICON_CLOSE = "https://www.cricketwireless.com/uiassets/mobile_menu_close.png";
+const HD_BTN_MENU_ICON_OPEN = "https://www.cricketwireless.com/uiassets/mobile_menu.png";
 
 
 //-----------------
@@ -35,7 +38,6 @@ window.addEventListener("resize", () => {
 
     let subMenu = $(element)[0].nextElementSibling;
     let icon = $(element)[0].firstElementChild;
-    console.log($(element))
 
     if(subMenu){
       subMenu.classList.remove(OPEN_SUBMENU);
@@ -48,6 +50,7 @@ window.addEventListener("resize", () => {
   hd__menu.style.width = "auto";
   hd__menu.classList.remove(OPEN_MENU);
   hd__main.classList.remove("mask");
+  hd__btnMenu.src = HD_BTN_MENU_ICON_OPEN;
 
   document.getElementsByTagName("body")[0].style.overflow = "auto";
   document.getElementsByTagName("body")[0].style.position = "initial";
@@ -70,7 +73,6 @@ function handleMove_mouse(event) {
 }
 
 function changeClassIcons(element){
-  console.log(element)
   if(validationWidth()){
     element.className = "fa fa-angle-down"
   }else {
@@ -155,6 +157,8 @@ function handleClick_openMenu(){
 
       hd__menu.style.width = "auto";
 
+      hd__btnMenu.src = HD_BTN_MENU_ICON_CLOSE;
+
       let width = "250px";
 
       hd__menu.style.width = "0px";
@@ -183,6 +187,9 @@ function handleClick_openMenu(){
         document.getElementsByTagName("body")[0].style.overflow = "auto";
         document.getElementsByTagName("body")[0].style.position = "initial";
         hd__main.classList.remove("mask");
+
+        hd__btnMenu.src = HD_BTN_MENU_ICON_OPEN;
+
       }, {once: true});
     }
   }
