@@ -6,41 +6,41 @@ const HD_MENU_LINK_SELECT = "hd__menu-link-select";
 const HD_BTN_MENU_ICON_CLOSE = "https://www.cricketwireless.com/uiassets/mobile_menu_close.png";
 const HD_BTN_MENU_ICON_OPEN = "https://www.cricketwireless.com/uiassets/mobile_menu.png";
 
+const HD_ITEM_IMAGE_ACTIVE = "hd__menu-itemImage-active";
+
 
 //-----------------
 //Event of Window
 //-----------------
 window.addEventListener("mousemove", handleMove_mouse);
 window.addEventListener("load", (event) => {
-	hd__menuLinks = document.getElementsByClassName("hd__menu-link");
-	hd__btnMenu = document.getElementById("hd__btnMenu");
-	hd__menu = document.getElementById("hd__menu");
+  hd__menuLinks = document.getElementsByClassName("hd__menu-link");
+  hd__btnMenu = document.getElementById("hd__btnMenu");
+  hd__menu = document.getElementById("hd__menu");
   hd__main = document.getElementById("hd__main");
-	
-	hd__btnMenu.addEventListener("click", () => handleClick_openMenu());
 
-	Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
-  	element.addEventListener("mouseover", () => handleHover__openSubmenu(element, key));
-  	element.addEventListener("click", (event) => handleClick_openSubMenu(element, event));
+  hd__btnMenu.addEventListener("click", () => handleClick_openMenu());
 
-    changeClassIcons($(element));
+  Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
+    setIconsMenu(element)
+
+    element.addEventListener("mouseover", () => handleHover__openSubmenu(element, key));
+    element.addEventListener("click", (event) => handleClick_openSubMenu(element, event));
   })
 })
-
 window.addEventListener("resize", () => {
   Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
-    element.classList.remove(OPEN_SUBMENU);
-    element.classList.remove(HD_MENU_LINK_SELECT);
+    setIconsMenu(element)
 
     let subMenu = $(element)[0].nextElementSibling;
-    let icon = $(element)[0].firstElementChild;
 
     if(subMenu){
       subMenu.classList.remove(OPEN_SUBMENU);
       subMenu.style.height = "45px";
-
-      changeClassIcons($(element));
     }
+
+    element.classList.remove(HD_MENU_LINK_SELECT);
+    element.classList.remove(HD_ITEM_IMAGE_ACTIVE);  
   })
 
   hd__menu.style.width = "auto";
@@ -52,12 +52,46 @@ window.addEventListener("resize", () => {
   document.getElementsByTagName("body")[0].style.position = "initial";
 })
 
-//-----------------
-//Tools
-//-----------------
 function validationWidth(){
   let { outerWidth } = window;
   if(outerWidth > 860){ return true }else{ return false };
+}
+
+function setIconsMenu(element){
+  let childrens = $(element)[0].children;
+  let icon = childrens[childrens.length - 1];
+
+  if(validationWidth() && icon){
+    childrens[childrens.length - 1].className = "fa fa-angle-down";
+  }else if(icon){
+    childrens[childrens.length - 1].className = "fas fa-chevron-circle-down";
+  }
+}
+
+//------------------------------
+//Event of Open SubMenu Desktop
+//-----------------------------
+function handleHover__openSubmenu(elementHover, keyHover) {
+  if(validationWidth()){
+
+    Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
+      if(keyHover === key){
+        element.classList.add(OPEN_SUBMENU);
+
+        let item_image = $(element)[0].firstElementChild;
+
+        if(item_image){
+          if(item_image.nodeName === "SPAN"){
+            element.classList.add(HD_ITEM_IMAGE_ACTIVE);
+          }
+        }
+      }else{
+        element.classList.remove(OPEN_SUBMENU);
+        element.classList.remove(HD_ITEM_IMAGE_ACTIVE);
+      }
+    })
+
+  }
 }
 
 function handleMove_mouse(event) { 
@@ -66,93 +100,8 @@ function handleMove_mouse(event) {
   if(clientY > 185 && validationWidth()){
     Array.prototype.forEach.call(hd__menuLinks, (element) => {
       element.classList.remove(OPEN_SUBMENU);
-      element.classList.remove("openSubmenu-cricket");
+      element.classList.remove(HD_ITEM_IMAGE_ACTIVE);
     })
-  }
-}
-
-function changeClassIcons(element){
-  let items = $(element)[0].children
-
-  Array.prototype.forEach.call(items, (value, key) => {
-    if(value.nodeName === "I"){
-      if(validationWidth()){
-        value.className = "fa fa-angle-down";
-      }else {
-        value.className = "fas fa-chevron-circle-down";
-      }
-    }
-  })
-}
-
-//------------------------------
-//Event of Open SubMenu Desktop
-//-----------------------------
-function handleHover__openSubmenu(elementHover, keyHover) {
-	if(validationWidth()){
-		Array.prototype.forEach.call(hd__menuLinks, (element, key) => {
-	  	if(keyHover === key){
-        element.classList.add(OPEN_SUBMENU);
-
-        let cricket = $(element)[0].firstElementChild
-
-        if(cricket.nodeName === "SPAN"){
-          element.classList.add("openSubmenu-cricket")
-        }
-      }else{
-        element.classList.remove(OPEN_SUBMENU)
-          element.classList.remove("openSubmenu-cricket")
-
-      }
-	  })
-	}
-}
-//------------------------------
-//Event of Open SubMenu Mobile
-//-----------------------------
-function handleClick_openSubMenu(elementClick, event){
-  if(!validationWidth()){
-    let validation;
-   Array.prototype.forEach.call(elementClick.parentElement.childNodes, (element) => {
-      if(element.localName === 'ul'){ 
-        validation = true;
-      }
-    })
-    if(validation){
-      event.preventDefault()
-    }
-    elementClick.classList.toggle(OPEN_SUBMENU)
-  }
-}
-function handleClick_openSubMenu(elementClick, event){
-  if(!validationWidth()){
-    let subMenu = $(elementClick)[0].nextElementSibling;
-    if(subMenu){
-      event.preventDefault()
-
-      if(!subMenu.classList.contains(OPEN_SUBMENU)) {
-        subMenu.classList.add(OPEN_SUBMENU)
-        elementClick.classList.add(HD_MENU_LINK_SELECT)
-
-        subMenu.style.height = "auto"
-
-        let altura = `${subMenu.clientHeight}px`;
-
-        subMenu.style.height = "0px"
-
-        setTimeout(() => {
-          subMenu.style.height = altura
-        }, 0) 
-
-      } else {
-        subMenu.style.height = "0px";
-        elementClick.classList.remove(HD_MENU_LINK_SELECT);
-          
-        subMenu.addEventListener("transitionend", () => {
-          subMenu.classList.remove(OPEN_SUBMENU);
-        }, {once: true})
-      }
-    }
   }
 }
 
@@ -161,7 +110,7 @@ function handleClick_openSubMenu(elementClick, event){
 //-----------------------------
 
 function handleClick_openMenu(){
-	if(!validationWidth()){    
+  if(!validationWidth()){    
     if(!hd__menu.classList.contains(OPEN_MENU)) {
      
       document.getElementsByTagName("body")[0].style.overflow = "hidden";
@@ -212,4 +161,34 @@ function handleClick_openMenu(){
   }
 }
 
+function handleClick_openSubMenu(elementClick, event){
+  if(!validationWidth()){
+    let subMenu = $(elementClick)[0].nextElementSibling;
+    if(subMenu){
+      event.preventDefault()
 
+      if(!subMenu.classList.contains(OPEN_SUBMENU)) {
+        subMenu.classList.add(OPEN_SUBMENU)
+        elementClick.classList.add(HD_MENU_LINK_SELECT)
+
+        subMenu.style.height = "auto"
+
+        let altura = `${subMenu.clientHeight}px`;
+
+        subMenu.style.height = "0px"
+
+        setTimeout(() => {
+          subMenu.style.height = altura
+        }, 0) 
+
+      } else {
+        subMenu.style.height = "0px";
+        elementClick.classList.remove(HD_MENU_LINK_SELECT);
+          
+        subMenu.addEventListener("transitionend", () => {
+          subMenu.classList.remove(OPEN_SUBMENU);
+        }, {once: true})
+      }
+    }
+  }
+}
