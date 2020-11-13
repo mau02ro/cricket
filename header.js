@@ -1,4 +1,4 @@
-var hd__menuLinks, hd__btnMenu, hd__menu, hd__main;
+var hd__menuLinks, hd__btnMenu, hd__menu, hd__main, widthScreeb;
 
 const OPEN_SUBMENU = 	"openSubMenu";
 const OPEN_MENU = 	"openMenu";
@@ -53,8 +53,11 @@ window.addEventListener("resize", () => {
 })
 
 function validationWidth(){
-  let { outerWidth } = window;
-  if(outerWidth > 860){ return true }else{ return false };
+  if($(document).width() > 860){ 
+    return true;
+  }else{ 
+    return false;
+  };
 }
 
 function setIconsMenu(element){
