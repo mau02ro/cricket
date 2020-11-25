@@ -1,4 +1,10 @@
-var hd__menuLinks, hd__btnMenu, hd__menu, hd__main, widthScreeb;
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
+var hd__modalLinks, hd__btnMenu, hd__menu, hd__main, hd__modal, hd__controllerModal, hd__closeModal;
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 
 const OPEN_SUBMENU = 	"openSubMenu";
 const OPEN_MENU = 	"openMenu";
@@ -12,12 +18,36 @@ const HD_ITEM_IMAGE_ACTIVE = "hd__menu-itemImage-active";
 //-----------------
 //Event of Window
 //-----------------
-window.addEventListener("mousemove", handleMove_mouse);
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+//window.addEventListener("mousemove", handleMove_mouse); //eliminar
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+
+
 window.addEventListener("load", (event) => {
   hd__menuLinks = document.getElementsByClassName("hd__menu-link");
   hd__btnMenu = document.getElementById("hd__btnMenu");
   hd__menu = document.getElementById("hd__menu");
   hd__main = document.getElementById("hd__main");
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+  hd__controllerModal = document.getElementById("hd__controllerModal");
+  hd__modal = document.getElementById("hd__modal");
+  hd__closeModal = document.getElementById("hd__closeModal");
+
+
+  hd__controllerModal.addEventListener("click", openAndCloseModal);
+  hd__closeModal.addEventListener("click", openAndCloseModal);
+
+  window.addEventListener("mousemove", handleMove_mouse); 
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+
 
   hd__btnMenu.addEventListener("click", () => handleClick_openMenu());
 
@@ -48,18 +78,33 @@ window.addEventListener("resize", () => {
   hd__main.classList.remove("mask");
   hd__btnMenu.src = HD_BTN_MENU_ICON_OPEN;
 
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+  hd__modal.classList.remove("open_modal");
+  hd__modal.style.width = "100%";
+  document.removeEventListener("click", handleClick_document);
+   /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+
+
   document.getElementsByTagName("body")[0].style.overflow = "auto";
   document.getElementsByTagName("body")[0].style.position = "initial";
 })
-
-function validationWidth(){
-  if($(document).width() > 860){ 
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+function validationWidth(value = 860){
+  if($(document).width() > value){ 
     return true;
   }else{ 
     return false;
   };
 }
-
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
 function setIconsMenu(element){
   let childrens = $(element)[0].children;
   let icon = childrens[childrens.length - 1];
@@ -195,3 +240,69 @@ function handleClick_openSubMenu(elementClick, event){
     }
   }
 }
+
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+function handleClick_document(event){
+  if(hd__modal.classList.contains("open_modal")){
+    let {clientY, clientX} = event;
+    let {left, top, bottom, right} = hd__modal.firstElementChild.getBoundingClientRect();
+    console.log(hd__modal.firstElementChild.getBoundingClientRect())
+    if((clientY < top || clientY > bottom) || (clientX < left || clientX > right)){
+      openAndCloseModal()
+    }
+  }
+}
+
+
+function openAndCloseModal(){
+  if(validationWidth(600)){
+    //Desktop
+    if(!hd__modal.classList.contains("open_modal")) {
+      hd__modal.classList.add("open_modal");
+      setTimeout(() => {
+        document.addEventListener("click", handleClick_document);
+      }, 0);
+    }else{
+      hd__modal.classList.remove("open_modal");
+      setTimeout(() => {
+        document.removeEventListener("click", handleClick_document);
+      }, 0);
+    }
+  }else{
+    if(!hd__modal.classList.contains("open_modal")) {
+     
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+      document.getElementsByTagName("body")[0].style.position = "fixed";
+      
+      hd__modal.classList.add("open_modal");
+
+      hd__modal.style.width = "auto";
+
+      let width = "300px";
+
+      hd__modal.style.width = "0px";
+
+      setTimeout(() => {
+        hd__modal.style.width = width;
+        document.addEventListener("click", handleClick_document);
+
+      }, 0) 
+
+    } else {
+      hd__modal.style.width = "0px"
+         
+      hd__modal.addEventListener("transitionend", () => {
+        hd__modal.classList.remove("open_modal");
+        document.getElementsByTagName("body")[0].style.overflow = "auto";
+        document.getElementsByTagName("body")[0].style.position = "initial";
+        document.removeEventListener("click", handleClick_document);
+      }, {once: true});
+    }
+  
+  }
+}
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/

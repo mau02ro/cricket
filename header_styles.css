@@ -53,18 +53,28 @@
 .hd__top-createAccount i{
 	margin-right: 5px;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .hd__moreLinks{
 	display: flex;
 	list-style: none;
 	position: relative;
-	right: -15px;
+	right: -25px;
 }
 .hd__moreLinks-link{
-	display: block;
+	display: flex;
 	line-height: 50px;
-	padding: 0 15px;
+	padding: 0 25px;
 	background: transparent;
+	align-items: center;
 }
+.hd__moreLinks-link > img{
+	margin-right: 5px; 
+}
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .hd__moreLinks-link:hover, .hd__top-createAccount:hover{
 	background: var(--details-gray);
 }
@@ -90,20 +100,33 @@
 	display: flex;
 	list-style: none
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 #hd__menu li{
-	margin-left: 25px;
+	margin-left: 47px;
+	padding-top: 15px;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .hd__createAccount-main{
 	display: none !important;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .hd__menu-link{
 	text-decoration: none;
 	color: var(--font-color-primary);
-	font-size: 1.6rem;
+	font-size: 1.9rem;
 	font-weight: bold;
 	display: flex;
 	align-items: center;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .hd__menu-link i{
 	margin-left: 5px;
 	font-size: 2rem;
@@ -181,6 +204,72 @@
 .hd__message a:hover{
 	text-decoration: none;
 }
+
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
+#hd__modal{
+	display: none;
+	position: absolute;
+	z-index: 10000;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	background: #00000094;
+	justify-content: center;
+	align-items: center;
+}
+.open_modal{
+	display: flex !important;
+}
+.hd__modal-container{
+	position: relative;
+	width: 90%;
+	max-width: 600px;
+	background: #fff;
+	padding: 26px 30px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    height: 285px;
+}
+.hd__modal-container > p{
+	font-size: 14px;
+	margin: 0 0 10px;
+    font-family: 'Simply Cricket Book', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    line-height: 1.5;
+}
+.hd__modal-container > p span{
+	font-weight: bold;
+}
+.hd__modal-container > h2{
+	font-size: 26px;
+    margin-top: 0;
+    font-weight: normal;
+    display: block;
+    font-family: 'Simply Cricket Demi', Helvetica, Arial, sans-serif;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+#hd__closeModal{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 3rem;
+	color: #1879b78c;
+}
+#hd__closeModal:hover{
+	color: #1879B7;
+}
+.hd__link{
+	text-decoration: underline;
+}
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
+
 /*-----------*/
 /*Header Categories*/
 /*-----------*/
@@ -271,10 +360,18 @@
 		background: rgba(0, 0, 0, .5);
 	}
 	/*animations*/	
+
+	/*Cambios*/
+	/*Cambios*/
+	/*Cambios*/
 	#hd__menu > li{
 		margin-left: 0;
 		width: 250px;
+		padding-top: 0;
 	}
+	/*Cambios*/
+	/*Cambios*/
+	/*Cambios*/
 	.hd__createAccount-main{
 		display: block !important;
 	}
@@ -411,5 +508,81 @@
 	.hd__categories .hd__wrapper{
 		padding: 10px 0;
 	}
+}
 
+@media screen and (max-width: 600px) {
+		/*Cambios*/
+	/*Cambios*/
+	/*Cambios*/
+	#hd__modal{
+		display: none;
+		position: absolute;
+		z-index: 10000;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		max-width: 300px;
+		background: transparent;
+		transition: .6s;
+		transition-property: width;
+	}
+	.open_modal ~ .hd__wrapper:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: #00000094;
+		z-index: 1;
+	}
+	.open_modal{
+		display: block !important;
+		transition: .6s !important;
+		transition-property: width !important;
+	}
+	.hd__modal-container{
+		background: #fff;
+		height: 100vh;
+		padding: 26px 30px;
+    	border-radius: 30px;
+    	max-width: 300px;
+    	position: initial;
+    	width: auto;
+	}
+	.hd__modal-container > p{
+		font-size: 14px;
+	    font-family: 'Simply Cricket Book', Helvetica, Arial, sans-serif;
+	    font-weight: 100;
+	    line-height: 1.5;
+		width: 230px;
+    max-height: 350px;
+    overflow-y: auto;
+	}
+	.hd__modal-container > p span{
+		font-weight: bold;
+	}
+	.hd__modal-container > h2{
+		width: 230px;
+		font-size: 26px;
+	    font-weight: normal;
+	    font-family: 'Simply Cricket Demi', Helvetica, Arial, sans-serif;
+	    margin-right: 0;
+	    margin-bottom: 20px;
+	    line-height: 1;
+	}
+	#hd__closeModal{
+		position: relative;
+		top: 20px;
+		left: 220px;
+		font-size: 3rem;
+		color: #1879b78c;
+	}
+	#hd__closeModal:hover{
+		color: #1879B7;
+	}
+	/*Cambios*/
+	/*Cambios*/
+	/*Cambios*/
 }
