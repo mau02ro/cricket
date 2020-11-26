@@ -53,9 +53,7 @@
 .hd__top-createAccount i{
 	margin-right: 5px;
 }
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
+
 .hd__moreLinks{
 	display: flex;
 	list-style: none;
@@ -72,9 +70,7 @@
 .hd__moreLinks-link > img{
 	margin-right: 5px; 
 }
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
+
 .hd__moreLinks-link:hover, .hd__top-createAccount:hover{
 	background: var(--details-gray);
 }
@@ -100,22 +96,16 @@
 	display: flex;
 	list-style: none
 }
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
+
 #hd__menu li{
 	margin-left: 47px;
 	padding-top: 15px;
 }
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
+
 .hd__createAccount-main{
 	display: none !important;
 }
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
+
 .hd__menu-link{
 	text-decoration: none;
 	color: var(--font-color-primary);
@@ -124,9 +114,7 @@
 	display: flex;
 	align-items: center;
 }
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
+
 .hd__menu-link i{
 	margin-left: 5px;
 	font-size: 2rem;
@@ -205,9 +193,7 @@
 	text-decoration: none;
 }
 
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
+
 #hd__modal{
 	display: none;
 	position: absolute;
@@ -266,9 +252,7 @@
 .hd__link{
 	text-decoration: underline;
 }
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
+
 
 /*-----------*/
 /*Header Categories*/
@@ -511,7 +495,7 @@
 }
 
 @media screen and (max-width: 600px) {
-		/*Cambios*/
+	/*Cambios*/
 	/*Cambios*/
 	/*Cambios*/
 	#hd__modal{
@@ -522,7 +506,6 @@
 		bottom: 0;
 		right: 0;
 		width: 100%;
-		max-width: 300px;
 		background: transparent;
 		transition: .6s;
 		transition-property: width;
@@ -547,8 +530,7 @@
 		height: 100vh;
 		padding: 26px 30px;
     	border-radius: 30px;
-    	max-width: 300px;
-    	position: initial;
+    	position: relative;
     	width: auto;
 	}
 	.hd__modal-container > p{
@@ -556,15 +538,14 @@
 	    font-family: 'Simply Cricket Book', Helvetica, Arial, sans-serif;
 	    font-weight: 100;
 	    line-height: 1.5;
-		width: 230px;
-    max-height: 350px;
-    overflow-y: auto;
+	    max-height: 350px;
+	    overflow-y: auto;
 	}
 	.hd__modal-container > p span{
 		font-weight: bold;
 	}
 	.hd__modal-container > h2{
-		width: 230px;
+		width: 100%;
 		font-size: 26px;
 	    font-weight: normal;
 	    font-family: 'Simply Cricket Demi', Helvetica, Arial, sans-serif;
@@ -573,9 +554,9 @@
 	    line-height: 1;
 	}
 	#hd__closeModal{
-		position: relative;
+		position: absolute;
 		top: 20px;
-		left: 220px;
+		right: 20px;
 		font-size: 3rem;
 		color: #1879b78c;
 	}
