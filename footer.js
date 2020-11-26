@@ -5,11 +5,11 @@ $(document).ready(() => {
     	$("#ft__dropdown-container").slideDown(400);
     	controller_dropDown = !controller_dropDown;
   	}else{
-    	$("#ft__dropdown-container").slideUp(400, () => {
-    		let newScroll = $("#ft").offset().top - 210;
-	    	$(document).scrollTop(newScroll);
-    	});
 
+    	$("#ft__dropdown-container").slideUp(400, () => {
+	    	$(document).scrollTop(0)
+	    	$(document).scrollTop($(document).height())
+    	});
   
     	controller_dropDown = !controller_dropDown;
   	}
