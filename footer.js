@@ -6,10 +6,8 @@ $(document).ready(() => {
     	controller_dropDown = !controller_dropDown;
   	}else{
     	$("#ft__dropdown-container").slideUp(400, () => {
-    		console.log('ok')
-
     		let newScroll = $("#ft").offset().top - 210;
-	    	$(window).scrollTop(newScroll);
+	    	$(document).scrollTop(newScroll);
     	});
 
   
