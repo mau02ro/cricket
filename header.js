@@ -207,12 +207,12 @@ function handleClick_openSubMenu(elementClick, event){
 
         subMenu.style.height = "auto"
 
-        let altura = `${subMenu.clientHeight}px`;
+        let height = `${subMenu.clientHeight}px`;
 
         subMenu.style.height = "0px"
 
         setTimeout(() => {
-          subMenu.style.height = altura
+          subMenu.style.height = height;
         }, 0) 
 
       } else {
