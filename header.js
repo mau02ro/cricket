@@ -1,10 +1,4 @@
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
 var hd__modalLinks, hd__btnMenu, hd__menu, hd__main, hd__modal, hd__controllerModal, hd__closeModal, hd__modalContainer;
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
 
 const OPEN_SUBMENU = 	"openSubMenu";
 const OPEN_MENU = 	"openMenu";
@@ -30,13 +24,7 @@ window.addEventListener("load", (event) => {
   hd__modal = document.getElementById("hd__modal");
   hd__closeModal = document.getElementById("hd__closeModal");
 
-  /*Cambios*/
-  /*Cambios*/
-  /*Cambios*/
   hd__modalContainer = document.getElementById("hd__modal-container");
-  /*Cambios*/
-  /*Cambios*/
-  /*Cambios*/
 
   hd__controllerModal.addEventListener("click", openAndCloseModal);
   hd__closeModal.addEventListener("click", openAndCloseModal);
@@ -60,7 +48,13 @@ window.addEventListener("resize", () => {
 
     if(subMenu){
       subMenu.classList.remove(OPEN_SUBMENU);
-      subMenu.style.height = "45px";
+      /*Cambios*/
+      /*Cambios*/
+      /*Cambios*/
+      subMenu.style.height = "41.5px";
+      /*Cambios*/
+      /*Cambios*/
+      /*Cambios*/
     }
 
     element.classList.remove(HD_MENU_LINK_SELECT);
@@ -72,14 +66,16 @@ window.addEventListener("resize", () => {
   hd__main.classList.remove("mask");
   hd__btnMenu.src = HD_BTN_MENU_ICON_OPEN;
 
-  /*Cambios*/
-  /*Cambios*/
-  /*Cambios*/
   hd__modalContainer.style.width = "100%";
-  /*Cambios*/
-  /*Cambios*/
-  /*Cambios*/
+
   hd__modal.classList.remove("open_modal");
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
+  hd__modal.classList.remove("close_modal");
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
   hd__modal.style.width = "100%";
   document.removeEventListener("click", handleClick_document);
 
@@ -245,26 +241,36 @@ function handleClick_document(event){
 
 function openAndCloseModal(){
   if(validationWidth(600)){
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
     if(!hd__modal.classList.contains("open_modal")) {
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+
+
       hd__modal.classList.add("open_modal");
       setTimeout(() => {
         document.addEventListener("click", handleClick_document);
       }, 0);
     }else{
       hd__modal.classList.remove("open_modal");
+      hd__modal.classList.add("close_modal");
+      
       setTimeout(() => {
+        hd__modal.classList.remove("close_modal");
         document.removeEventListener("click", handleClick_document);
-      }, 0);
+
+        document.getElementsByTagName("body")[0].style.overflow = "auto";
+      }, 290);
     }
+  /*Cambios*/
+  /*Cambios*/
+  /*Cambios*/
   }else{
     if(!hd__modal.classList.contains("open_modal")) {
      
       document.getElementsByTagName("body")[0].style.overflow = "hidden";
       document.getElementsByTagName("body")[0].style.position = "fixed";
-
-      /*Cambios*/
-      /*Cambios*/
-      /*Cambios*/
 
       let width__app = document.getElementById("body").getBoundingClientRect().width;
       
@@ -279,9 +285,6 @@ function openAndCloseModal(){
       let width__modalContainer = width__app - ((width__app*5)/100);
 
       hd__modalContainer.style.width = `${width__modalContainer}px`;
-      /*Cambios*/
-      /*Cambios*/
-      /*Cambios*/
 
       setTimeout(() => {
         hd__modal.style.width = width;
@@ -297,13 +300,9 @@ function openAndCloseModal(){
         document.getElementsByTagName("body")[0].style.overflow = "auto";
         document.getElementsByTagName("body")[0].style.position = "initial";
         document.removeEventListener("click", handleClick_document);
-        /*Cambios*/
-        /*Cambios*/
-        /*Cambios*/
+
         hd__modalContainer.style.width = "100%";
-        /*Cambios*/
-        /*Cambios*/
-        /*Cambios*/
+
       }, {once: true});
     }
   
