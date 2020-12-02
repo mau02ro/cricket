@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 @font-face { 
   font-family: "Simply Cricket Book"; 
   src: url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Book.woff2") format("woff2"), 
@@ -14,7 +16,9 @@
     url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Demibold.svg") format("svg"), 
     url("https://f.hubspotusercontent30.net/hubfs/5670381/cricket_website/fonts/SimplyCricket-Demibold.ttf") format("truetype"); 
 }
-
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 
 :root{
 	--background-primary: #fff;
