@@ -245,9 +245,6 @@ function openAndCloseModal(){
   /*Cambios*/
   /*Cambios*/
     if(!hd__modal.classList.contains("open_modal")) {
-      document.getElementsByTagName("body")[0].style.overflow = "hidden";
-
-
       hd__modal.classList.add("open_modal");
       setTimeout(() => {
         document.addEventListener("click", handleClick_document);
@@ -259,20 +256,17 @@ function openAndCloseModal(){
       setTimeout(() => {
         hd__modal.classList.remove("close_modal");
         document.removeEventListener("click", handleClick_document);
-
-        document.getElementsByTagName("body")[0].style.overflow = "auto";
       }, 290);
     }
   /*Cambios*/
   /*Cambios*/
   /*Cambios*/
   }else{
+    /*Cambios*/
+      /*Cambios*/
+      /*Cambios*/
     if(!hd__modal.classList.contains("open_modal")) {
-     
-      document.getElementsByTagName("body")[0].style.overflow = "hidden";
-      document.getElementsByTagName("body")[0].style.position = "fixed";
-
-      let width__app = document.getElementById("body").getBoundingClientRect().width;
+            let width__app = document.getElementById("body").getBoundingClientRect().width;
       
       hd__modal.classList.add("open_modal");
 
@@ -297,14 +291,14 @@ function openAndCloseModal(){
          
       hd__modal.addEventListener("transitionend", () => {
         hd__modal.classList.remove("open_modal");
-        document.getElementsByTagName("body")[0].style.overflow = "auto";
-        document.getElementsByTagName("body")[0].style.position = "initial";
         document.removeEventListener("click", handleClick_document);
 
         hd__modalContainer.style.width = "100%";
 
       }, {once: true});
     }
-  
+    /*Cambios*/
+    /*Cambios*/
+    /*Cambios*/
   }
 }
