@@ -1,61 +1,73 @@
 /*-----------*/
 /*Details*/
 /*-----------*/
-.ft__title-primary{
-	font-size: 2.2rem !important;
-  line-height: 2.8rem;
-  margin: 5px 0;
-}
-/*Cambios*/
-/*Cambios*/
-/*Cambios*/
-.ft__title-secondary{
-	margin: 10px 0;
-  font-size: 18px !important;
-  letter-spacing: .1rem;
-}
 /*Cambios*/
 /*Cambios*/
 /*Cambios*/
 
+.ft__title-primary{
+  	margin: 10px 0;
+  	font-family: "Simply Cricket Demi", Helvetica, Arial, sans-serif;
+  	font-weight: 500;
+  	font-size: 2.2rem;
+  	line-height: 28px;
+}
+.ft__title-secondary{
+  	font-family: "Simply Cricket Demi", Helvetica, Arial, sans-serif;
+  	font-weight: 500;
+  	font-size: 1.8rem !important;
+  	line-height: 20px;
+}
 .ft__text{
-	font-weight: lighter;
-	margin-top: 10px;
-	line-height: 1.4;
-	font-size: 14px !important;
-	letter-spacing: .5px;
+	margin-top: 8px;
+	font-size: 1.2rem !important;
+  	line-height: 17px;
+  	font-family: "Simply Cricket Book", Helvetica, Arial, sans-serif;
 }
 
 .ft__details-anchor, .ft__details-blod{
-	font-weight: bold;
+	font-family: "Simply Cricket Demi", Helvetica, Arial, sans-serif;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
+
 /*-----------*/
 /*Footer*/
 /*-----------*/
 #ft{
 	background: var(--background-secondary);
-	padding: 6rem;
-	font-family: 'Roboto', sans-serif;
+	padding: 64px 0 30px;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 #ft *{
 	color: var(--font-color-secondary);
-	font-size: 1.37rem;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__wrapper{
 	width: 90%;
-	max-width: 1100px;
+	max-width: 1020px;
 	margin: 0 auto;
 }
 
 /*-----------*/
 /*Footer*/
 /*-----------*/
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__description, .ft__dropdown-container{
 	width: 100%;
-	max-width: 950px;
+	max-width: 865px;
 	margin: 0 auto;
 }
-
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 /*-----------*/
 /*Footer Description*/
 /*-----------*/
@@ -66,25 +78,33 @@
 /*-----------*/
 /*Footer Dropdown*/
 /*-----------*/
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__dropdown-label{
 	display: flex;
 	width: 100%;
 	border-top: 1px solid var(--details-gray);
 	border-bottom: 1px solid var(--details-gray);
 	cursor: pointer;
-	padding: .8rem 0;
-	font-weight: bold;
-	font-size: 1.5rem !important;
-	letter-spacing: .6px;
+	padding: 4px 0;
 	align-items: center;
 	justify-content: center;
-	margin-top: 25px;
+	margin-top: 13px;
+	font-family: "Simply Cricket Demi", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 20px;
 }
+
 .ft__dropdown-label i{
 	font-size: 2rem !important;
-	margin-left: 10px;
+	margin-left: 20px;
 	transition: .1s;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 #ft__dropdown-check{
 	display: none;
 }
@@ -106,6 +126,11 @@
 	padding-left: 40px;
 }
 .ft__dropdown-info--subInfo h4{
+	font-size: 1.2rem;
+	line-height: 17px;
+	font-weight: 400;
+}
+.ft__dropdown-info--subInfo h4{
 }
 .ft__dropdown-info--content li{
 	list-style: disc inside;
@@ -115,48 +140,84 @@
 /*-----------*/
 /*Footer Menu and Social*/
 /*-----------*/
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__container{
 	display: flex;
 	flex-flow: row-reverse;
-	margin-top: 15px;
 	background: var(--background-secondary);
 	position: relative;
 	z-index: 10;
+	padding-top: 30px;
 }
-
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__social{
 	flex: 1;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__social-icons *{
-	font-size: 29px !important;
-	margin-right: 10px;
+	font-size: 32px !important;
+	margin-right: 17px;
 	text-decoration: none;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__menu{
-	flex: 2.5;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-column-gap: 40px;
-	list-style: none;
+	flex: 2.6;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 52.3px;
+    list-style: none;
 }
 .ft__menu-column-subMenu{
 	list-style: none;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__menu-column-subMenu li a{
 	text-decoration: none;
 	display: inline-block;
-	margin-bottom: 5px;
-	font-weight: lighter;
+	margin-bottom: 10px;
+	font-size: 1.2rem;
+	font-family: "Simply Cricket Book", Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	line-height: 17px;
 }
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 .ft__menu-column-subMenu li a:hover{
 	text-decoration: underline;
 }
 
 .ft__copyright{
-	font-weight:bold;
-	margin-top: 20px;
+	margin-top: 17px;
 }
-
+.ft__copyright p{
+	font-size: 1.2rem;
+	line-height: 17px;
+	font-weight: 100;
+	font-family: "Simply Cricket Demi", Arial, sans-serif;
+}
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
+@media screen and (min-width: 951px) {
+	.ft__social{
+		position: relative;
+    	left: -36px;
+	}
+}
+/*Cambios*/
+/*Cambios*/
+/*Cambios*/
 @media screen and (max-width: 950px) {
 	#ft{
 		padding: 40px 0;
