@@ -247,12 +247,9 @@
 	width: 100%;
 	background: #00000063;
 	justify-content: center;
+	padding-top: 100px;
 }
-@media screen and (min-width: 861px) {
-	#hd__modal{
-		padding-top: 100px;
-	}
-}
+
 .open_modal{
 	display: flex !important;
 	animation-duration: .3s;
@@ -597,6 +594,15 @@
 	.hd__categories .hd__wrapper{
 		padding: 10px 0;
 	}
+	/*Cambios*/
+	/*Cambios*/
+	/*Cambios*/
+	#hd__modal{
+		padding-top: 100px;
+	}
+	/*Cambios*/
+	/*Cambios*/
+	/*Cambios*/
 }
 
 @media screen and (max-width: 600px) {
@@ -614,6 +620,7 @@
 		background: transparent;
 		transition: .6s;
 		transition-property: width;
+		padding-top: 0;
 	}
 	.open_modal ~ .hd__wrapper:before{
 		content: "";
