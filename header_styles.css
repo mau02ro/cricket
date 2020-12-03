@@ -148,7 +148,17 @@
 	margin-left: 5px;
 	font-size: 2rem;
 }
-
+@media screen and (min-width: 861px) {
+	#hd__menu > li:nth-child(5){
+		margin-left: 49px;
+	}
+	#hd__menu > li:nth-child(4){
+		margin-left: 52px;
+	}
+	#hd__menu > li:nth-child(3){
+		margin-left: 49px;
+	}
+}
 .hd__menu-itemImage span{
 	display: none;
 }
@@ -157,7 +167,7 @@
     position: relative;
     padding-left: 128px;
     padding-bottom: 6px;
-    width: 100%;
+    width: 132px;
     height: 27px;
 	  background: url(https://www.cricketwireless.com/uiassets/bg_header-nav-cricket.png) no-repeat;
 }
